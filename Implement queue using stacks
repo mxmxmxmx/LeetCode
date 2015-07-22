@@ -1,0 +1,26 @@
+class Queue:
+    # initialize your data structure here.
+    def __init__(self):
+        self.A, slef.B = [], []
+
+    # @param x, an integer
+    # @return nothing
+    def push(self, x):
+        self.A.append(x)
+
+    # @return nothing
+    def pop(self):
+        self.peek()
+        self.B.pop()
+
+    # @return an integer
+    def peek(self):
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        return self.B[-1]
+
+    # @return an boolean
+    def empty(self):
+        return not self.A and not self.B
+        
