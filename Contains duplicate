@@ -1,0 +1,18 @@
+class Solution:
+    # @param {integer[]} nums
+    # @return {boolean}
+    def containsDuplicate(self, nums):
+        nums.sort()
+        isDup = False
+        for i in xrange(len(nums)-1):
+            if nums[i] == nums[i+1]:
+                isDup = True
+                break
+        return isDup
+
+
+class Solution:
+    # @param {integer[]} nums
+    # @return {boolean}
+    def containsDuplicate(self, nums):
+        return len(nums) > len(set(nums))
