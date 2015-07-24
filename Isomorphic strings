@@ -1,0 +1,17 @@
+class Solution:
+    # @param {string} s
+    # @param {string} t
+    # @return {boolean}
+    def isIsomorphic(self, s, t):
+        if len(s) != len(t):
+            return False
+        return self.HalfIso(s,t) and self.HalfIso(t,s)
+        
+    def HalfIso(self, s ,t):
+        lookup = {}
+        for i in xrange(len(s)):
+            if s[i] not in lookup:
+                lookup[s[i]] = t[i]
+            elif lookup[s[i]] != t[i]:
+                return False
+        return True
