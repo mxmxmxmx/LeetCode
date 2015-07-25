@@ -1,0 +1,17 @@
+class Solution:
+    # @param {integer[]} nums
+    # @return {integer}
+    def rob(self, nums):
+        if len(nums) == 0:
+            return 0
+        
+        if len(nums) == 1:
+            return nums[0]
+            
+        num_i_1, num_i = nums[0], max(nums[0], nums[1])
+        money = 0
+        for i in xrange(2, len(nums)):
+            num_i_2, num_i_1 = num_i_1, num_i
+            num_i = max(num_i_2 + nums[i], num_i_1)
+            
+        return num_i
