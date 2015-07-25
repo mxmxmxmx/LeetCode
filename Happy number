@@ -1,0 +1,14 @@
+class Solution:
+    # @param {integer} n
+    # @return {boolean}
+    def isHappy(self, n):
+    
+        lookup = {}
+        while n != 1 and n not in lookup:
+            lookup[n] = True
+            nums = str(n)
+            n = 0
+            for i in nums:
+                n += int(i)**2
+       
+        return n == 1
